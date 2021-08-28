@@ -4,7 +4,12 @@ function Counter() {
   const [count, setCount] = useState(0);
 
   function increment() {
-    setCount(count + 1);
+    console.log(`before setState: ${count}`)
+  setCount((x) => x + 1);
+  console.log(`after first setState: ${count}`)
+  setCount((x) => x + 1);
+  console.log(`after second setState: ${count}`)
+
   }
 
   return <button onClick={increment}>I have been clicked {count} times</button>;
